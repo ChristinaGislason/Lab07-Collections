@@ -33,16 +33,22 @@ namespace Lab07_Collections.Classes
             Array.Resize(ref cards, cards.Length - 1);
         }
 
-        /*
-        public Deck<T> ReturnSuit(string Suit)
-        s{
+        
+        public Deck<T> ReturnSuit(CardSuit Suit)
+        {
+            Deck<T> myCards = new Deck<T>();
+
             foreach (T item in cards)
             {
-                if (item.)
-                Console.WriteLine(Card.Suit);
+                // cast item as a Card type
+                if ((item as Card).Suit == Suit)
+                {
+                    myCards.Add(item);
+                }
             }
+            return myCards;
         }
-        */
+        
 
         //must ALWAYS do this in order to implement the IEnumberable interface 
         public IEnumerator<T> GetEnumerator()
