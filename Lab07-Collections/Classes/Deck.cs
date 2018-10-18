@@ -25,15 +25,24 @@ namespace Lab07_Collections.Classes
             cards[count++] = card;
         }
 
-        public void Remove(T card)
+        /// <summary>
+        /// removes the last card added to a deck
+        /// </summary>
+        public void Remove()
         {
-           
+            Array.Resize(ref cards, cards.Length - 1);
         }
 
-        public Deck<T> ShowSuit(string Suit)
-        {
-
+        /*
+        public Deck<T> ReturnSuit(string Suit)
+        s{
+            foreach (T item in cards)
+            {
+                if (item.)
+                Console.WriteLine(Card.Suit);
+            }
         }
+        */
 
         //must ALWAYS do this in order to implement the IEnumberable interface 
         public IEnumerator<T> GetEnumerator()
@@ -43,7 +52,6 @@ namespace Lab07_Collections.Classes
             {
                 yield return cards[i];
             }
-
         }
 
         // this is required to allow enumeration with legacy code
