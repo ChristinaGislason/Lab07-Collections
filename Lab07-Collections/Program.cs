@@ -30,6 +30,13 @@ namespace Lab07_Collections
             };
 
             myCards.Remove();
+
+            Deck<Card> clubs =myCards.ReturnSuit(CardSuit.Clubs);
+
+            foreach (Card card in clubs)
+            {
+                Console.WriteLine($"suit: {card.Suit}, value: {card.Value}");
+            }
         }
     }
 }
