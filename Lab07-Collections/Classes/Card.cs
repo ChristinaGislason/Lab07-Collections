@@ -6,7 +6,7 @@ namespace Lab07_Collections.Classes
 {
     class Card       
         {
-            // the Suit is an enum
+            // The Suit and Values are an enums
             public CardSuit Suit { get; set; }
             public Value Value { get; set; }
         }

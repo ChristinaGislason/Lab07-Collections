@@ -8,13 +8,13 @@ namespace Lab07_Collections
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             GenericCollection();
         }
 
         static void GenericCollection()
         {
-            //assign array size
+            // Instantiate collection
+            // Instantiate ten cards with values
             Deck<Card> myCards = new Deck<Card>()
             {
                 new Card { Suit = CardSuit.Spades, Value = Value.Ace },
@@ -29,13 +29,22 @@ namespace Lab07_Collections
                 new Card { Suit = CardSuit.Spades, Value = Value.Jack }
             };
 
+            Console.WriteLine("Add ten cards to the deck:");
+            foreach (Card card in myCards)
+            {
+                Console.WriteLine($"Suit: {card.Suit}, Value: {card.Value}");
+            }
+
+            Console.WriteLine("----------");
+            Console.WriteLine("Remove last card added to the deck:");
             myCards.Remove();
 
+            Console.WriteLine("----------");
+            Console.WriteLine("Return all cards with Suit of Clubs:");
             Deck<Card> clubs =myCards.ReturnSuit(CardSuit.Clubs);
-
             foreach (Card card in clubs)
             {
-                Console.WriteLine($"suit: {card.Suit}, value: {card.Value}");
+                Console.WriteLine($"Suit: {card.Suit}, Value: {card.Value}");
             }
         }
     }
