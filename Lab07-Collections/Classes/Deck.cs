@@ -6,11 +6,11 @@ using System.Text;
 namespace Lab07_Collections.Classes
 {
     //'IEnumerable' is an adjective; T represents a generic type
-    class Deck<T>: IEnumerable 
+    public class Deck<T>: IEnumerable 
     {
         // Size allocation of cards array
-        T[] cards = new T[5];
-        int count = 0;
+        public T[] cards = new T[5];
+        public int count = 0;
 
         /// <summary>
         /// Adds a card to the cards array
