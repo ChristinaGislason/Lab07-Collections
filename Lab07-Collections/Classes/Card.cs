@@ -4,14 +4,14 @@ using System.Text;
 
 namespace Lab07_Collections.Classes
 {
-    class Card       
+    public class Card       
         {
-            // the Suit is an enum
+            // The Suit and Values are an enums
             public CardSuit Suit { get; set; }
             public Value Value { get; set; }
         }
         
-        enum CardSuit
+        public enum CardSuit
         {
             Diamonds,
             Hearts,
@@ -19,7 +19,7 @@ namespace Lab07_Collections.Classes
             Clubs
         }
         
-        enum Value
+        public enum Value
         {
             Ace = 1,
             Two,
