@@ -12,6 +12,10 @@ namespace Lab07_Collections.Classes
         T[] cards = new T[5];
         int count = 0;
 
+        /// <summary>
+        /// Adds a card to the cards array
+        /// </summary>
+        /// <param name="card"></param>
         public void Add(T card)
         {
             if (count == cards.Length)
@@ -28,26 +32,28 @@ namespace Lab07_Collections.Classes
         public void Remove()
         {
             Array.Resize(ref cards, cards.Length - 1);
+            count--;
         }
 
         /// <summary>
         /// Returns all cards with a particular suit in the deck 
         /// </summary>
-        /// <param name="Suit"></param>
+        /// <param name="suit"></param>
         /// <returns></returns>
-        public Deck<T> ReturnSuit(CardSuit Suit)
+        public Deck<T> ReturnSuit(CardSuit suit)
         {
-            Deck<T> myCards = new Deck<T>();
+            Deck<T> suitDeck = new Deck<T>();
 
-            foreach (T item in cards)
+            for (int i = 0; i < count; i++)
             {
+                T item = cards[i];
                 // cast item as a Card type
-                if ((item as Card).Suit == Suit)
+                if ((item as Card).Suit == suit)
                 {
-                    myCards.Add(item);
-                }
+                    suitDeck.Add(item);
+                }        
             }
-            return myCards;
+            return suitDeck;
         }
         
 
